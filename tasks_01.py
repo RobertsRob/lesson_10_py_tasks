@@ -16,6 +16,12 @@ failed_students = scores[scores.isna()]
 print(failed_students)
 
 # 3.task
+# У вас есть Series, в которой находятся строки с датами в формате "день/месяц/год". Нужно извлечь из этих строк только год.
+# data:
+dates = pd.Series(["15/08/2021", "22/12/2020", "01/01/2022", "25/10/2021"])
+
+years = dates.str.split("/").str[2]
+print(years)
 
 # 4.task
 
