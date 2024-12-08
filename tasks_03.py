@@ -26,6 +26,11 @@ df_filtered = df_sorted[df_sorted['Sale Percentage'] > 50]
 print(df_filtered)
 
 # 3.task
+# Загрузите данные в DataFrame.
+# Отсортируйте заказы по дате.
+# Выберите все заказы, сделанные в ноябре 2024 года.
+# Рассчитайте общую сумму всех заказов.
+
 
 # 4.task
 
