@@ -31,6 +31,15 @@ print(df_filtered)
 # Выберите все заказы, сделанные в ноябре 2024 года.
 # Рассчитайте общую сумму всех заказов.
 
+df = pd.read_excel('t3.xlsx')
+
+df['Total'] = df['Quantity'] * df['Price']
+df_sorted = df.sort_values('Order Date')
+
+df_sorted['Order Date'] = pd.to_datetime(df_sorted['Order Date'])
+df_filtered = df_sorted[(df_sorted['Order Date'] >= '2024-11-01') & (df_sorted['Order Date'] <= '2024-11-30')]
+
+print(df_filtered)
 
 # 4.task
 
