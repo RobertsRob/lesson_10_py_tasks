@@ -42,15 +42,27 @@ df_filtered = df_sorted[(df_sorted['Order Date'] >= '2024-11-01') & (df_sorted['
 print(df_filtered)
 
 # 4.task
+# Загрузите данные в DataFrame.
+# Заполните пропущенные значения в столбце Discount средним значением.
+# Заполните пропущенные значения в столбце Total произведением Quantity на Price (если данные по этим столбцам есть).
+# Выведите итоговую таблицу с заполенными пропусками.
+
+df = pd.read_excel('t4.xlsx')
+
+df['Discount'] = df['Discount'].fillna(df['Discount'].mean())
+df['Total'] = df.apply(lambda row: row['Quantity'] * row['Price'] if pd.isna(row['Total']) else row['Total'], axis=1)
+
+print(df)
 
 # 5.task
+# Загрузите данные в DataFrame.
+# Заполните пропуски в столбце Age медианным значением.
+# Заполните пропуски в столбце Grade средним значением по этому столбцу.
+# Выведите итоговую таблицу с заполенными данными.
 
-# 6.task
+df = pd.read_excel('t5.xlsx')
 
-# 7.task
+df['Age'] = df['Age'].fillna(df['Age'].median())
+df['Grade'] = df['Grade'].fillna(df['Grade'].mean())
 
-# 8.task
-
-# 9.task
-
-# 10.task
+print(df)
