@@ -59,17 +59,21 @@ print(df_filtered)
 
 
 
-
 # 4.task
+# Есть таблица с данными о клиентах магазина: имя, дата рождения, покупка (общая сумма), дата последней покупки.
+# Необходимо найти клиентов, которые потратили больше 50 евро и сделали покупку в последний месяц (позже 2024-11-01) . Затем удалите столбец с датой последней покупки.
 
-# 5.task
+data = {'Name': ['Иван', 'Анна', 'Петр', 'Мария', 'Сергей'],
+        'Birth Date': ['1990-06-15', '1995-12-20', '1987-03-10', '1992-11-11', '1989-07-30'],
+        'Purchase': [60, 45, 120, 40, 100],
+        'Last Purchase Date': ['2024-11-03', '2024-11-05', '2024-11-20', '2024-10-15', '2024-11-30']}
 
-# 6.task
+df = pd.DataFrame(data)
 
-# 7.task
+df['Last Purchase Date'] = pd.to_datetime(df['Last Purchase Date'])
+df_filtered = df[(df['Purchase'] > 50) & (df['Last Purchase Date'] > '2024-11-01')]
+df_filtered = df_filtered.drop(columns=['Last Purchase Date'])
 
-# 8.task
+print(df_filtered)
 
-# 9.task
 
-# 10.task
